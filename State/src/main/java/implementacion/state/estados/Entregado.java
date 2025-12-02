@@ -17,7 +17,7 @@ public class Entregado extends Estado {
     }
 
     private void informar(){
-        System.out.println("PENE");
+        System.out.println("");
     }
     
 }
