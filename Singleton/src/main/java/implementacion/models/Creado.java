@@ -12,16 +12,20 @@ public class Creado implements Estado{
         return instance;
     }
 
+
+    @Override
+    public String toString() {
+        return "Creado";
+    }
+
+    
     @Override
     public void algoritmo() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'algoritmo'");
     }
 
-    @Override
-    public String toString() {
-        return "Creado";
-    }
+    
     
 
     

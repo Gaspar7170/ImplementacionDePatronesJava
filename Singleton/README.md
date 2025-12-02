@@ -17,31 +17,60 @@ class Singleton {
 
 ## Índice
 
+- [1. Introduccion](#1-introduccion)
+- [2. Dominio de Aplicacion](#2-dominio-de-aplicacion)
+- [3. Diseno del Sistema](#3-diseno-del-sistema)
+  - [3.1 Clase Contexto](#31-clase-contexto)
+  - [3.2 Estados](#32-estados)
+  - [3.3 Interfaz](#33-interfaz)
+- [4. Marco Teorico](#4-marco-teorico)
+- [5. Estilo Arquitectonico](#5-estilo-arquitectonico)
+- [6. Diagrama de clases](#6-diagrama-de-clases)
+- [7. Desarrollo de la Implementacion](#7-desarrollo-de-la-implementacion)
+  - [7.1 App.java](#71-appjava)
+  - [7.2 Pedido.java](#72-pedidojava)
+  - [7.3 Estado.java](#73-estadojava)
+  - [7.4 Creado.java](#74-creadojava)
+- [8. Conclusion](#8-conclusion)
+- [9. Consideraciones Finales](#9-consideraciones-finales)
 
-
-
-## 1. Introducción  
 
 
 ---
 
-## 2. Dominio de Aplicación
+## 1. Introduccion  
+En este proyecto explicaremos la implementacion del patron singleton.
 
+---
+
+## 2. Dominio de Aplicacion
+Se modelara un pedido junto a sus estados, cada estado tendra una instancia unica. Aplicando asi el patron Singleton.
 
 ---
 
 ## 3. Diseño del Sistema
+### 3.1 Clase Contexto
+- Pedido
+### 3.2 Estados
+- Creado
+
+### 3.3 Interfaz
+- Estado
+
+---
+
+## 4. Marco Teorico
+El patrón de diseño Singleton garantiza que una clase tenga una única instancia en todo el sistema y proporciona un punto de acceso global a dicha instancia.
+
+El objetivo principal del patrón Singleton es:
+- Evitar la creación de múltiples instancias de una clase.
+- Centralizar el acceso a un único objeto compartido.
+- Mantener control sobre recursos críticos o compartidos.
 
 
 ---
 
-## 4. Marco Teórico
-
-
-
----
-
-## 5. Estilo Arquitectónico
+## 5. Estilo Arquitectonico
 
 Se adopta una implementación acotada del estilo arquitectónico **Layered** (arquitectura en capas).
 
@@ -95,7 +124,7 @@ Creado ..|> Estado
 
 ---
 
-## 7. Desarrollo de la Implementación
+## 7. Desarrollo de la Implementacion
 
 ### 7.1 App.java
 
@@ -123,8 +152,8 @@ Creado ..|> Estado
 
 ---
 
-## 8. Conclusión
-El uso del patron Singléton permite mantener una sola instancia de una clase.
+## 8. Conclusion
+El uso del patron Singléton permite mantener una sola instancia de una clase. Sin embargo, no se debe de abusar del mismo ya que esto podria ocasionar en problemas de acoplamiento al ser clases de acceso global.
 
 ---
 
