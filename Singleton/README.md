@@ -5,6 +5,14 @@
 ```mermaid
 classDiagram
 
+class Singleton {
+    <<Singleton>>
+    - $ instanciaUnica
+
+    - $ new()
+    + $ obtenerInstancia() Singleton
+}
+
 ```
 
 ## Índice
@@ -52,6 +60,82 @@ La ejecución del sistema se realiza desde la clase principal `App`.
 ```mermaid
 classDiagram
 
+
+
+class Estado {
+    <<Abstract>>
+    - nombre : string
+    - $ instance : Estado
+
+    - $ new()
+    + $ getInstance() Estado
+}
+
+
+class Cancelado{
+
+}
+class Entregado{
+
+}
+class EnCurso{
+
+}
+
+class Pedido {
+    - estado : Estado
+    + getEstado() Estado
+    + new()
+}
+
+Pedido --> Estado : estado
+Creado --|> Estado
+EnCurso --|> Estado
+Entregado --|> Estado
+Cancelado --|> Estado
+
+
+```
+
+```mermaid
+classDiagram
+    %% Contexto: El objeto que cambia de comportamiento
+    class GameContext {
+        -GameState estadoActual
+        +setState(GameState nuevoEstado)
+        +presionarBoton()
+    }
+
+    %% Interfaz de Estado
+    class GameState {
+        <<interface>>
+        +manejarInput()
+    }
+
+    %% Estado Concreto 1: MENÚ (Es Singleton)
+    class EstadoMenu {
+        -static EstadoMenu instancia
+        -EstadoMenu()
+        +static getInstance()$ EstadoMenu
+        +manejarInput()
+    }
+
+    %% Estado Concreto 2: JUGANDO (Es Singleton)
+    class EstadoJugando {
+        -static EstadoJugando instancia
+        -EstadoJugando()
+        +static getInstance()$ EstadoJugando
+        +manejarInput()
+    }
+
+    %% Relaciones
+    GameContext o-- GameState : Tiene un
+    GameState <|.. EstadoMenu : Implementa
+    GameState <|.. EstadoJugando : Implementa
+
+    %% Notas explicativas
+    note for EstadoMenu "Singleton:\nConstructor privado (-)\nAcceso estático ($)"
+    note for EstadoJugando "Se reutiliza la misma instancia\ncada vez que volvemos a este estado"
 ```
 
 
