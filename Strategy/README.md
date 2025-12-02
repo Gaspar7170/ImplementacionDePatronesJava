@@ -1,5 +1,34 @@
 # Implementación del Patrón Strategy
 
+## Strategy Diagram Class 
+
+```mermaid
+classDiagram
+
+    
+    %% Relación de Agregación (Rombo vacío o--)
+    Contexto o--> IEstategia : estrategia
+    EstategiaA ..|> IEstategia
+    EstategiaB ..|> IEstategia
+
+
+    class Contexto {
+        + calcularSueldo(e: this)
+    }
+
+  class IEstategia {
+    <<interface>>
+    + algoritmo(e: Contexto)
+  }
+
+    class EstategiaA{
+        +algoritmo(e: Contexto)
+    }
+    class EstategiaB{
+        +algoritmo(e: Contexto)
+    }
+```
+
 ## Índice
 
 - [1. Introducción](#1-introducción)
@@ -67,7 +96,34 @@ La ejecución del sistema se realiza desde la clase principal `App`.
 ---
 
 ## 6. Diagrama de clases
-![Diagrama UML](DiagramaDeClases.png)
+
+```mermaid
+classDiagram
+
+    
+    %% Relación de Agregación (Rombo vacío o--)
+    Empleado o--> ISueldo : estrategiaSueldo
+    SueldoFijo ..|> ISueldo
+    SueldoTemporal ..|> ISueldo
+
+
+    class Empleado {
+        + calcularSueldo(e: this)
+    }
+
+  class ISueldo {
+    <<interface>>
+    + calcularSueldo(e: Empleado)
+  }
+
+    class SueldoFijo{
+        +calcularSueldo(e: Empleado)
+    }
+    class SueldoTemporal{
+        +calcularSueldo(e: Empleado)
+    }
+```
+
 
 ---
 
