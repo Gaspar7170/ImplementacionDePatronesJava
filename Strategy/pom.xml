@@ -89,7 +89,7 @@
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>3.5.0</version>
                     <configuration>
-                        <mainClass>implementacion.strategy.App</mainClass>
+                        <mainClass>implementacion.App</mainClass>
                     </configuration>
                 </plugin>
             </plugins>
