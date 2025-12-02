@@ -1,6 +1,6 @@
-# Implementación del Patrón Strategy
+# Implementación del Patrón 
 
-## Strategy Diagram Class 
+## Diagrama de Clase 
 
 ```mermaid
 classDiagram
